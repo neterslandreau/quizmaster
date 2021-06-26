@@ -21,7 +21,7 @@ class Answer extends Model
     public static function correct(int $question)
     {
         $c = DB::table('answers')
-            ->select('text')
+            ->select('id','text')
             ->where('is_correct', 1)
             ->where('question_id', $question)
             ->first();

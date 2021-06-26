@@ -50,26 +50,13 @@ class QuizController extends Controller
      */
     public function show(int $id)
     {
+
         $quiz = Quiz::where('id', $id)->with('questions')->first();
         foreach ($quiz->questions as $q => $question) {
             $answers[$q] = Question::where('id', $question->id)->with('answers')->first();
         }
-        $correct = 0;
-        $missed = [];
 
-        if (request()->method() === 'POST') {
-            for ($x = 1; $x <= 10; $x++) {
-                $correct = $correct + (int)request('question_'.$x);
-                if (!(int)request('question_'.$x)) {
-                    $answer_correct = Answer::correct($x);
-                    array_push($missed, 'Q.'.$x.' - '.$answer_correct->text);
-                }
-
-            }
-//            dump($correct);
-        }
-
-        return view('quizzes/show', compact('quiz', 'answers', 'correct', 'missed'));
+        return view('quizzes/show', compact('quiz', 'answers'));
     }
 
     /**
@@ -78,8 +65,22 @@ class QuizController extends Controller
      */
     public function tally(Request $request)
     {
-        dump(request()->method());
-        dump(request('question_1'));
+        if (request()->method() === 'POST') {
+            $correct = 0;
+            $missed = [];
+            $answers = [];
+            for ($x = 1; $x <= 10; $x++) {
+                if ((int) request('question_'.$x) === 1) {
+                    $correct = $correct + (int)request('question_' . $x);
+                } else {
+                    $answer_correct = Answer::correct($x);
+                    array_push($missed, $x);
+                    array_push($answers, $answer_correct->id);
+
+                }
+            }
+        }
+        return json_encode(['missed' => $missed, 'answers' => $answers]);
     }
 
     /**

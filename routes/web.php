@@ -20,7 +20,7 @@ use App\Http\Controllers\QuizController;
 
 Route::get('/', [QuizController::class, 'index']);
 Route::get('/quizzes/{id}/show', [QuizController::class, 'show']);
-Route::post('/quizzes/{id}/show', [QuizController::class, 'show']);
+Route::post('/quizzes/{id}/tally', [QuizController::class, 'tally']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
