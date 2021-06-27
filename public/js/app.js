@@ -332,7 +332,7 @@ eval("window._ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodas
   \******************************/
 /***/ (() => {
 
-eval("$(function () {\n  $('#quizsubmit').on('click', function (e) {\n    e.preventDefault();\n    var data = $('#quizform').serialize();\n    var url = '/quizzes/1/tally';\n    return axios.post(url, data).then(function (response) {\n      var correct = response.data.correct;\n      var missed = response.data.missed;\n      var answers = response.data.answers;\n      var results = buildResults(correct, missed, answers);\n      $('#quizresults').html(results);\n      $('#quizform').trigger('reset');\n    });\n  });\n\n  function buildResults(correct, missed, answers) {\n    var results = '<h2>You have ' + correct + ' answers correct.</h2>You missed the following:<br>';\n    $(missed).each(function (miss) {\n      var q = miss + 1;\n      results += 'Q' + q + '. ' + answers[miss] + '.<br>';\n    });\n    results += '<hr>';\n    return results;\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvcXVpei5qcz9iYjI3Il0sIm5hbWVzIjpbIiQiLCJvbiIsImUiLCJwcmV2ZW50RGVmYXVsdCIsImRhdGEiLCJzZXJpYWxpemUiLCJ1cmwiLCJheGlvcyIsInBvc3QiLCJ0aGVuIiwicmVzcG9uc2UiLCJjb3JyZWN0IiwibWlzc2VkIiwiYW5zd2VycyIsInJlc3VsdHMiLCJidWlsZFJlc3VsdHMiLCJodG1sIiwidHJpZ2dlciIsImVhY2giLCJtaXNzIiwicSJdLCJtYXBwaW5ncyI6IkFBQUFBLENBQUMsQ0FBQyxZQUFXO0FBQ1RBLEVBQUFBLENBQUMsQ0FBQyxhQUFELENBQUQsQ0FBaUJDLEVBQWpCLENBQW9CLE9BQXBCLEVBQTZCLFVBQVNDLENBQVQsRUFBWTtBQUNyQ0EsSUFBQUEsQ0FBQyxDQUFDQyxjQUFGO0FBQ0EsUUFBSUMsSUFBSSxHQUFHSixDQUFDLENBQUMsV0FBRCxDQUFELENBQWVLLFNBQWYsRUFBWDtBQUNBLFFBQUlDLEdBQUcsR0FBRyxrQkFBVjtBQUNBLFdBQU9DLEtBQUssQ0FBQ0MsSUFBTixDQUFXRixHQUFYLEVBQWdCRixJQUFoQixFQUNGSyxJQURFLENBQ0csVUFBQUMsUUFBUSxFQUFJO0FBQ2QsVUFBSUMsT0FBTyxHQUFHRCxRQUFRLENBQUNOLElBQVQsQ0FBY08sT0FBNUI7QUFDQSxVQUFJQyxNQUFNLEdBQUdGLFFBQVEsQ0FBQ04sSUFBVCxDQUFjUSxNQUEzQjtBQUNBLFVBQUlDLE9BQU8sR0FBR0gsUUFBUSxDQUFDTixJQUFULENBQWNTLE9BQTVCO0FBRUEsVUFBSUMsT0FBTyxHQUFHQyxZQUFZLENBQUNKLE9BQUQsRUFBVUMsTUFBVixFQUFrQkMsT0FBbEIsQ0FBMUI7QUFFQWIsTUFBQUEsQ0FBQyxDQUFDLGNBQUQsQ0FBRCxDQUFrQmdCLElBQWxCLENBQXVCRixPQUF2QjtBQUNBZCxNQUFBQSxDQUFDLENBQUMsV0FBRCxDQUFELENBQWVpQixPQUFmLENBQXVCLE9BQXZCO0FBQ0gsS0FWRSxDQUFQO0FBV0gsR0FmRDs7QUFnQkEsV0FBU0YsWUFBVCxDQUFzQkosT0FBdEIsRUFBK0JDLE1BQS9CLEVBQXVDQyxPQUF2QyxFQUFnRDtBQUM1QyxRQUFJQyxPQUFPLEdBQUcsa0JBQWtCSCxPQUFsQixHQUE0QixxREFBMUM7QUFDQVgsSUFBQUEsQ0FBQyxDQUFDWSxNQUFELENBQUQsQ0FBVU0sSUFBVixDQUFlLFVBQVNDLElBQVQsRUFBZTtBQUMxQixVQUFJQyxDQUFDLEdBQUdELElBQUksR0FBRyxDQUFmO0FBQ0FMLE1BQUFBLE9BQU8sSUFBSSxNQUFLTSxDQUFMLEdBQVEsSUFBUixHQUFjUCxPQUFPLENBQUNNLElBQUQsQ0FBckIsR0FBOEIsT0FBekM7QUFDSCxLQUhEO0FBSUFMLElBQUFBLE9BQU8sSUFBSSxNQUFYO0FBQ0EsV0FBT0EsT0FBUDtBQUNIO0FBQ0osQ0ExQkEsQ0FBRCIsInNvdXJjZXNDb250ZW50IjpbIiQoZnVuY3Rpb24oKSB7XG4gICAgJCgnI3F1aXpzdWJtaXQnKS5vbignY2xpY2snLCBmdW5jdGlvbihlKSB7XG4gICAgICAgIGUucHJldmVudERlZmF1bHQoKTtcbiAgICAgICAgbGV0IGRhdGEgPSAkKCcjcXVpemZvcm0nKS5zZXJpYWxpemUoKTtcbiAgICAgICAgbGV0IHVybCA9ICcvcXVpenplcy8xL3RhbGx5JztcbiAgICAgICAgcmV0dXJuIGF4aW9zLnBvc3QodXJsLCBkYXRhKVxuICAgICAgICAgICAgLnRoZW4ocmVzcG9uc2UgPT4ge1xuICAgICAgICAgICAgICAgIGxldCBjb3JyZWN0ID0gcmVzcG9uc2UuZGF0YS5jb3JyZWN0O1xuICAgICAgICAgICAgICAgIGxldCBtaXNzZWQgPSByZXNwb25zZS5kYXRhLm1pc3NlZDtcbiAgICAgICAgICAgICAgICBsZXQgYW5zd2VycyA9IHJlc3BvbnNlLmRhdGEuYW5zd2VycztcblxuICAgICAgICAgICAgICAgIGxldCByZXN1bHRzID0gYnVpbGRSZXN1bHRzKGNvcnJlY3QsIG1pc3NlZCwgYW5zd2Vycyk7XG5cbiAgICAgICAgICAgICAgICAkKCcjcXVpenJlc3VsdHMnKS5odG1sKHJlc3VsdHMpO1xuICAgICAgICAgICAgICAgICQoJyNxdWl6Zm9ybScpLnRyaWdnZXIoJ3Jlc2V0Jyk7XG4gICAgICAgICAgICB9KTtcbiAgICB9KTtcbiAgICBmdW5jdGlvbiBidWlsZFJlc3VsdHMoY29ycmVjdCwgbWlzc2VkLCBhbnN3ZXJzKSB7XG4gICAgICAgIGxldCByZXN1bHRzID0gJzxoMj5Zb3UgaGF2ZSAnICsgY29ycmVjdCArICcgYW5zd2VycyBjb3JyZWN0LjwvaDI+WW91IG1pc3NlZCB0aGUgZm9sbG93aW5nOjxicj4nO1xuICAgICAgICAkKG1pc3NlZCkuZWFjaChmdW5jdGlvbihtaXNzKSB7XG4gICAgICAgICAgICBsZXQgcSA9IG1pc3MgKyAxO1xuICAgICAgICAgICAgcmVzdWx0cyArPSAnUScrIHEgKycuICcrIGFuc3dlcnNbbWlzc10gKyAnLjxicj4nO1xuICAgICAgICB9KTtcbiAgICAgICAgcmVzdWx0cyArPSAnPGhyPic7XG4gICAgICAgIHJldHVybiByZXN1bHRzO1xuICAgIH1cbn0pO1xuIl0sImZpbGUiOiIuL3Jlc291cmNlcy9qcy9xdWl6LmpzLmpzIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/js/quiz.js\n");
+eval("$(function () {\n  $('#quizsubmit').on('click', function (e) {\n    e.preventDefault();\n    var data = $('#quizform').serialize();\n    var url = '/quizzes/1/tally';\n    return axios.post(url, data).then(function (response) {\n      var correct = response.data.correct;\n      var missed = response.data.missed;\n      var answers = response.data.answers;\n      var results = buildResults(correct, missed, answers);\n      $('#quizresults').html(results);\n      $('#quizform').trigger('reset');\n    });\n  });\n\n  function buildResults(correct, missed, answers) {\n    console.log('missed', missed);\n    var results = '<h2>You have ' + correct + ' answers correct.</h2>You missed the following:<br>';\n    $(missed).each(function (miss, c) {\n      results += 'Q' + c + '. ' + answers[miss] + '.<br>';\n    });\n    results += '<hr>';\n    return results;\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvcXVpei5qcz9iYjI3Il0sIm5hbWVzIjpbIiQiLCJvbiIsImUiLCJwcmV2ZW50RGVmYXVsdCIsImRhdGEiLCJzZXJpYWxpemUiLCJ1cmwiLCJheGlvcyIsInBvc3QiLCJ0aGVuIiwicmVzcG9uc2UiLCJjb3JyZWN0IiwibWlzc2VkIiwiYW5zd2VycyIsInJlc3VsdHMiLCJidWlsZFJlc3VsdHMiLCJodG1sIiwidHJpZ2dlciIsImNvbnNvbGUiLCJsb2ciLCJlYWNoIiwibWlzcyIsImMiXSwibWFwcGluZ3MiOiJBQUFBQSxDQUFDLENBQUMsWUFBVztBQUNUQSxFQUFBQSxDQUFDLENBQUMsYUFBRCxDQUFELENBQWlCQyxFQUFqQixDQUFvQixPQUFwQixFQUE2QixVQUFTQyxDQUFULEVBQVk7QUFDckNBLElBQUFBLENBQUMsQ0FBQ0MsY0FBRjtBQUNBLFFBQUlDLElBQUksR0FBR0osQ0FBQyxDQUFDLFdBQUQsQ0FBRCxDQUFlSyxTQUFmLEVBQVg7QUFDQSxRQUFJQyxHQUFHLEdBQUcsa0JBQVY7QUFDQSxXQUFPQyxLQUFLLENBQUNDLElBQU4sQ0FBV0YsR0FBWCxFQUFnQkYsSUFBaEIsRUFDRkssSUFERSxDQUNHLFVBQUFDLFFBQVEsRUFBSTtBQUNkLFVBQUlDLE9BQU8sR0FBR0QsUUFBUSxDQUFDTixJQUFULENBQWNPLE9BQTVCO0FBQ0EsVUFBSUMsTUFBTSxHQUFHRixRQUFRLENBQUNOLElBQVQsQ0FBY1EsTUFBM0I7QUFDQSxVQUFJQyxPQUFPLEdBQUdILFFBQVEsQ0FBQ04sSUFBVCxDQUFjUyxPQUE1QjtBQUVBLFVBQUlDLE9BQU8sR0FBR0MsWUFBWSxDQUFDSixPQUFELEVBQVVDLE1BQVYsRUFBa0JDLE9BQWxCLENBQTFCO0FBRUFiLE1BQUFBLENBQUMsQ0FBQyxjQUFELENBQUQsQ0FBa0JnQixJQUFsQixDQUF1QkYsT0FBdkI7QUFDQWQsTUFBQUEsQ0FBQyxDQUFDLFdBQUQsQ0FBRCxDQUFlaUIsT0FBZixDQUF1QixPQUF2QjtBQUNILEtBVkUsQ0FBUDtBQVdILEdBZkQ7O0FBZ0JBLFdBQVNGLFlBQVQsQ0FBc0JKLE9BQXRCLEVBQStCQyxNQUEvQixFQUF1Q0MsT0FBdkMsRUFBZ0Q7QUFDNUNLLElBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLFFBQVosRUFBcUJQLE1BQXJCO0FBQ0EsUUFBSUUsT0FBTyxHQUFHLGtCQUFrQkgsT0FBbEIsR0FBNEIscURBQTFDO0FBQ0FYLElBQUFBLENBQUMsQ0FBQ1ksTUFBRCxDQUFELENBQVVRLElBQVYsQ0FBZSxVQUFTQyxJQUFULEVBQWNDLENBQWQsRUFBaUI7QUFDNUJSLE1BQUFBLE9BQU8sSUFBSSxNQUFLUSxDQUFMLEdBQVEsSUFBUixHQUFjVCxPQUFPLENBQUNRLElBQUQsQ0FBckIsR0FBOEIsT0FBekM7QUFDSCxLQUZEO0FBR0FQLElBQUFBLE9BQU8sSUFBSSxNQUFYO0FBQ0EsV0FBT0EsT0FBUDtBQUNIO0FBQ0osQ0ExQkEsQ0FBRCIsInNvdXJjZXNDb250ZW50IjpbIiQoZnVuY3Rpb24oKSB7XG4gICAgJCgnI3F1aXpzdWJtaXQnKS5vbignY2xpY2snLCBmdW5jdGlvbihlKSB7XG4gICAgICAgIGUucHJldmVudERlZmF1bHQoKTtcbiAgICAgICAgbGV0IGRhdGEgPSAkKCcjcXVpemZvcm0nKS5zZXJpYWxpemUoKTtcbiAgICAgICAgbGV0IHVybCA9ICcvcXVpenplcy8xL3RhbGx5JztcbiAgICAgICAgcmV0dXJuIGF4aW9zLnBvc3QodXJsLCBkYXRhKVxuICAgICAgICAgICAgLnRoZW4ocmVzcG9uc2UgPT4ge1xuICAgICAgICAgICAgICAgIGxldCBjb3JyZWN0ID0gcmVzcG9uc2UuZGF0YS5jb3JyZWN0O1xuICAgICAgICAgICAgICAgIGxldCBtaXNzZWQgPSByZXNwb25zZS5kYXRhLm1pc3NlZDtcbiAgICAgICAgICAgICAgICBsZXQgYW5zd2VycyA9IHJlc3BvbnNlLmRhdGEuYW5zd2VycztcblxuICAgICAgICAgICAgICAgIGxldCByZXN1bHRzID0gYnVpbGRSZXN1bHRzKGNvcnJlY3QsIG1pc3NlZCwgYW5zd2Vycyk7XG5cbiAgICAgICAgICAgICAgICAkKCcjcXVpenJlc3VsdHMnKS5odG1sKHJlc3VsdHMpO1xuICAgICAgICAgICAgICAgICQoJyNxdWl6Zm9ybScpLnRyaWdnZXIoJ3Jlc2V0Jyk7XG4gICAgICAgICAgICB9KTtcbiAgICB9KTtcbiAgICBmdW5jdGlvbiBidWlsZFJlc3VsdHMoY29ycmVjdCwgbWlzc2VkLCBhbnN3ZXJzKSB7XG4gICAgICAgIGNvbnNvbGUubG9nKCdtaXNzZWQnLG1pc3NlZCk7XG4gICAgICAgIGxldCByZXN1bHRzID0gJzxoMj5Zb3UgaGF2ZSAnICsgY29ycmVjdCArICcgYW5zd2VycyBjb3JyZWN0LjwvaDI+WW91IG1pc3NlZCB0aGUgZm9sbG93aW5nOjxicj4nO1xuICAgICAgICAkKG1pc3NlZCkuZWFjaChmdW5jdGlvbihtaXNzLGMpIHtcbiAgICAgICAgICAgIHJlc3VsdHMgKz0gJ1EnKyBjICsnLiAnKyBhbnN3ZXJzW21pc3NdICsgJy48YnI+JztcbiAgICAgICAgfSk7XG4gICAgICAgIHJlc3VsdHMgKz0gJzxocj4nO1xuICAgICAgICByZXR1cm4gcmVzdWx0cztcbiAgICB9XG59KTtcbiJdLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvcXVpei5qcy5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/quiz.js\n");
 
 /***/ }),
 
@@ -360,9 +360,10 @@ eval("/* module decorator */ module = __webpack_require__.nmd(module);\nvar __WE
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
   \*********************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Can't find stylesheet to import.\n  ╷\n8 │ @import '~bootstrap/scss/bootstrap';\n  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  ╵\n  resources/sass/app.scss 8:9  root stylesheet\n    at processResult (/Users/nilesrowland/Projects/quizmaster/node_modules/webpack/lib/NormalModule.js:701:19)\n    at /Users/nilesrowland/Projects/quizmaster/node_modules/webpack/lib/NormalModule.js:807:5\n    at /Users/nilesrowland/Projects/quizmaster/node_modules/loader-runner/lib/LoaderRunner.js:399:11\n    at /Users/nilesrowland/Projects/quizmaster/node_modules/loader-runner/lib/LoaderRunner.js:251:18\n    at context.callback (/Users/nilesrowland/Projects/quizmaster/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at /Users/nilesrowland/Projects/quizmaster/node_modules/sass-loader/dist/index.js:54:7\n    at Function.call$2 (/Users/nilesrowland/Projects/quizmaster/node_modules/sass/sass.dart.js:93417:16)\n    at _render_closure1.call$2 (/Users/nilesrowland/Projects/quizmaster/node_modules/sass/sass.dart.js:81775:12)\n    at _RootZone.runBinary$3$3 (/Users/nilesrowland/Projects/quizmaster/node_modules/sass/sass.dart.js:27547:18)\n    at _FutureListener.handleError$1 (/Users/nilesrowland/Projects/quizmaster/node_modules/sass/sass.dart.js:26096:19)");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy9hcHAuc2Nzcz80NzVmIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSIsImZpbGUiOiIuL3Jlc291cmNlcy9zYXNzL2FwcC5zY3NzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/sass/app.scss\n");
 
 /***/ }),
 
@@ -405,7 +406,41 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					result = fn();
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -467,13 +502,66 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/js/app": 0,
+/******/ 			"css/app": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			for(moduleId in moreModules) {
+/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 				}
+/******/ 			}
+/******/ 			if(runtime) var result = runtime(__webpack_require__);
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkIds[i]] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
-/******/ 	__webpack_require__("./resources/js/app.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./resources/sass/app.scss");
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;

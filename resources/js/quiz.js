@@ -16,10 +16,10 @@ $(function() {
             });
     });
     function buildResults(correct, missed, answers) {
+        console.log('missed',missed);
         let results = '<h2>You have ' + correct + ' answers correct.</h2>You missed the following:<br>';
-        $(missed).each(function(miss) {
-            let q = miss + 1;
-            results += 'Q'+ q +'. '+ answers[miss] + '.<br>';
+        $(missed).each(function(miss,c) {
+            results += 'Q'+ c +'. '+ answers[miss] + '.<br>';
         });
         results += '<hr>';
         return results;
