@@ -17,7 +17,17 @@ $(function() {
             });
     });
     function buildResults(correct, missed, answers) {
-        let results = '<h2>You have ' + correct + ' answers correct.</h2>You missed the following:<br>';
+        let ts = '';
+        if (correct < 5) {
+            ts = 'color: #ff0000';
+        }
+        else {
+            ts = 'color: #00ff00';
+        }
+        let results = '<h2 style="' + ts + '">You have ' + correct + ' answers correct.</h2>';
+        if (correct < 10) {
+            results += 'You missed the following:<br>';
+        }
         $(missed).each(function(miss,c) {
             results += 'Q'+ c +'. '+ answers[miss] + '.<br>';
         });
