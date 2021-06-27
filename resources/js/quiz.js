@@ -13,10 +13,10 @@ $(function() {
 
                 $('#quizresults').html(results);
                 $('#quizform').trigger('reset');
+                $('html, body').animate({ scrollTop: 0 }, 'fast');
             });
     });
     function buildResults(correct, missed, answers) {
-        console.log('missed',missed);
         let results = '<h2>You have ' + correct + ' answers correct.</h2>You missed the following:<br>';
         $(missed).each(function(miss,c) {
             results += 'Q'+ c +'. '+ answers[miss] + '.<br>';
