@@ -70,17 +70,17 @@ class QuizController extends Controller
             $missed = [];
             $answers = [];
             for ($x = 1; $x <= 10; $x++) {
-                if ((int) request('question_'.$x) === 1) {
+                if (request('question_'.$x) == 1) {
                     $correct = $correct + (int)request('question_' . $x);
                 } else {
                     $answer_correct = Answer::correct($x);
                     array_push($missed, $x);
-                    array_push($answers, $answer_correct->id);
+                    array_push($answers, $answer_correct->text);
 
                 }
             }
+            return json_encode(['missed' => $missed, 'answers' => $answers, 'correct' => $correct]);
         }
-        return json_encode(['missed' => $missed, 'answers' => $answers]);
     }
 
     /**

@@ -1,0 +1,96 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+//@import '~tempusdominus-bootstrap-4/src/sass/tempusdominus-bootstrap-4';
+@import '~bootstrap-colorpicker/src/sass/colorpicker';
+
+.my-menu-holder {
+    text-align: center;
+    color: #1b4b72;
+}
+.gu-mirror {
+    display:none;
+}
+@media(max-width: 768px) {
+    .my-menu-holder {
+        text-align: left;
+        padding-left: 20px;
+
+    }
+}
+.modal-login .avatar {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -70px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #60c7c1;
+    padding: 15px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-login .avatar img {
+    width: 100%;
+}
+.btn-get-started {
+    margin-top: 30px;
+    line-height: 0;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #4154f1;
+    box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+}
+.features .content {
+    padding: 30px 0;
+}
+
+.features .content .icon-box {
+    margin-top: 25px;
+}
+
+.features .content .icon-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px 0 10px 60px;
+}
+
+.features .content .icon-box i {
+    font-size: 48px;
+    float: left;
+    color: #5777ba;
+}
+
+.features .content .icon-box p {
+    font-size: 15px;
+    color: #979aa1;
+    margin-left: 60px;
+}
+
+@media (max-width: 991px) {
+    .features .image {
+        text-align: center;
+    }
+    .features .image img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 667px) {
+    .features .image img {
+        max-width: 100%;
+    }
+}
+.full-height {
+    height: 100vh;
+}
+
